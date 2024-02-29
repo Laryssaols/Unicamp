@@ -17,7 +17,7 @@ printName(){
 	print("Hello Word");
 }
 void main(){
-  final duration;  
+  dynamic duration;  
 }
 
 
