@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.deepPurple, 
+          backgroundColor: Colors.deepPurple,
         ),
-        scaffoldBackgroundColor: Colors.white, 
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -33,11 +33,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Widget> getChildren() {
- 
-    return [
-     
-    ];
+  String current = '';
+
+
+    List<Widget> getChildren({@required  rotulos}) {
+    List<Widget> children = [];
+      rotulos?.forEach((element) {
+      children.add(
+        TextButton(
+        onPressed: (){
+          setState(() {
+            current = element.toString();
+          });
+        },
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 4.0),
+            height: 20,
+            width: 20, // Adicionando a largura ao Container
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color.fromARGB(255, 24, 128, 247),
+            ),
+            child: Center(
+              child: Text(
+                '$element',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    });
+    return children;
   }
 
   @override
@@ -47,9 +77,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: getChildren(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(current),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:
+                      getChildren(rotulos: ["a", "b", "c", 1, 2, 3, 4, 5, 6])),
+            ],
+          ),
         ),
       ),
     );
