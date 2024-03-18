@@ -2,12 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/tip.dart';
 
+
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Tip calculator'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -54,8 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             InputDecorator(
-                decoration:
-                    const InputDecoration(labelText: 'Grjeta Customizada'),
+                decoration: const InputDecoration(labelText: 'Customed Tip'),
                 child: Slider(
                     min: 1,
                     max: 50,
@@ -65,13 +66,62 @@ class _MyHomePageState extends State<MyHomePage> {
                         tip.customTip = value.toStringAsFixed(2);
                       });
                     })),
-            Text(tip.defaultTippedAmount),
-            Text(tip.customTippedAmount),
-            Text(tip.amountPlusDefaultTippedAmount),
-            Text(tip.amountPlusCustomTippedAmount)
+            DataTable(
+              columns: <DataColumn>[
+                DataColumn(
+                  label: Container(
+                    color: Color(0xffa77dae),
+                    child: Text('Description'),
+                  ),
+                ),
+                DataColumn(
+                  label: Container(
+                    color: Color(0xffa77dae),
+                    child: Text('Amount'),
+                  ),
+                ),
+              ],
+              rows: <DataRow>[
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('1Default Tipped Amount')),
+                  DataCell(Text(tip.defaultTippedAmount)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('Custom Tipped Amount')),
+                  DataCell(Text(tip.customTippedAmount)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('Amount Plus Default Tipped Amount')),
+                  DataCell(Text(tip.amountPlusDefaultTippedAmount)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('Amount Plus Custom Tipped Amount')),
+                  DataCell(Text(tip.amountPlusCustomTippedAmount)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('Default Tipped Amount Per Customer')),
+                  DataCell(Text(tip.defaultTippedAmountPerCustomer)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(Text('Custom Tipped Amount Per Customer')),
+                  DataCell(Text(tip.customTippedAmountPerCustomer)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(
+                      Text('Amount Plus Default Tipped Amount Per Customer')),
+                  DataCell(Text(tip.amountPlusDefaultTippedAmountPerCustomer)),
+                ]),
+                DataRow(cells: <DataCell>[
+                  DataCell(
+                      Text('Amount Plus Custom Tipped Amount Per Customer')),
+                  DataCell(Text(tip.amountPlusCustomTippedAmountPerCustomer)),
+                ]),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+

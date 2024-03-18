@@ -2,6 +2,35 @@ class Tip {
   final double _defaultTip;
   double? _customTip;
   double? _totalAmount;
+  int _customerPaying = 1;
+
+  String get defaultTippedAmountPerCustomer {
+    return _totalAmount == null
+        ? "0"
+        : ((_totalAmount! * _defaultTip / 100) / _customerPaying)
+            .toStringAsFixed(2);
+  }
+
+  String get customTippedAmountPerCustomer {
+    return _totalAmount == null
+        ? "0"
+        : (((_totalAmount ?? 0) * (_customTip ?? 0) / 100) / _customerPaying)
+            .toStringAsFixed(2);
+  }
+
+  String get amountPlusDefaultTippedAmountPerCustomer {
+    return _totalAmount == null
+        ? "0"
+        : ((_totalAmount! * (1 + (_defaultTip / 100))) / _customerPaying)
+            .toStringAsFixed(2);
+  }
+
+  String get amountPlusCustomTippedAmountPerCustomer {
+    return _totalAmount == null
+        ? "0"
+        : ((_totalAmount! * (1 + ((_customTip ?? 0) / 100))) / _customerPaying)
+            .toStringAsFixed(2);
+  }
 
   Tip() : _defaultTip = 10 {
     _customTip = 10;
