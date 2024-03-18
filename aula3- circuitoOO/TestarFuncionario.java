@@ -26,20 +26,6 @@ public class TestarFuncionario {
         System.out.println("Bônus Anual de " + cientista.getNome() + ": " + cientista.getBonusAnual());
         System.out.println("CRCD do Cientista: " + cientista.getCrcd());
 
-        GerenteTI gerenteTI = new GerenteTI();
-        gerenteTI.setNome("Maria");
-        gerenteTI.setCpf("555.666.777-88");
-        gerenteTI.setDtNasc("20/04/1970");
-        gerenteTI.setNum_dependente(2);
-        gerenteTI.setSalario(10000.00);
-        gerenteTI.set_numFunc(10);
-        gerenteTI.setRamal("123");
-
-        System.out.println("GerenteTI");
-        System.out.println("Bônus Anual de " + gerenteTI.getNome() + ": " + gerenteTI.getBonusAnual());
-        System.out.println("Número de Funcionários sob Gerenciamento: " + gerenteTI.get_numFunc());
-        System.out.println("Ramal do Gerente de TI: " + gerenteTI.getRamal());
     }
         
-    }
 }

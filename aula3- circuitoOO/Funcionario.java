@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 class Funcionario{
     private String nome;
     private String cpf; 
@@ -8,7 +5,8 @@ class Funcionario{
     private int num_dependente; 
     private double salario; 
 
-    public double getBonusAnul(){
+    @Override
+    public double bonusAnual(){
         return (10 * this.salario)/100;
     }
     //get set nome
