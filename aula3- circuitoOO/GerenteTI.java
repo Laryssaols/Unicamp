@@ -3,12 +3,37 @@ public class GerenteTI extends Funcionario{
     private String ramal;
     private String senha; 
 
-    @Override
-    public double bonusAnualGerente(){
-        return (10 * this.salario) * num_Func;
+    public GerenteTI(String nome, String cpf, String dt_nasc, int num_dependente, double salario, int num_Func, String ramal, String senha){
+        super(nome, cpf, dt_nasc, num_dependente, salario);
+        this.num_Func = num_Func; 
+        this.ramal = ramal;
+        this.senha = senha;
     }
+
+    @overboard 
+    public boolean autentica(String senha, String cpf){
+        if(this.senha.equals(senha) && cpf.length() == 11){
+            return true;
+        }
+        else{
+            return false; 
+        }
+    }
+s
+    @Override
+    public double getBonusAnual(){
+        return super.getSalario() * 0.1 * get_numFunc();
+    }
+
+    public int getSenha(){
+        return senha;
+    }
+    public void setSenha(int Senha){
+        this.senha = senha;
+    }
+
     public boolean autentica(String senha){
-        if (this.senha == senha){
+        if (this.senha.equals(senha)){
             return true;
         } else{
             return false;

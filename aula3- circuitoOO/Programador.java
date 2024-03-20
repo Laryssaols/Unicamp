@@ -1,5 +1,10 @@
 public class Programador extends Funcionario{
     private int crp;
+
+    public GerenteTI(String nome, String cpf, String dt_nasc, int num_dependente, double salario, int crp){
+        super(nome, cpf, dt_nasc, num_dependente, salario);
+        this.crp = crp;
+    }
     
     public int getCrp(){
         return crp;

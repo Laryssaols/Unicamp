@@ -1,8 +1,16 @@
 public class Cientista extends Funcionario{
     private int crcd;
+
     
-    public double bonusAnualCientista(){
-        return (10 * this.salario)/100 + 500;
+    public Cientista
+    
+    public Cientista(String nome, String cpf, String dt_nasc, int num_dependente, double salario, int crcd){
+        super(nome, cpf, dt_nasc, num_dependente, salario);
+        this.crcd = crcd; 
+    }
+
+    public double getBonusAnual(){
+        return super.getBonusAnual() + 500.0;
     }
     public int getCrcd(){
         return crcd;
@@ -10,5 +18,4 @@ public class Cientista extends Funcionario{
     public void setCrcd(int crcd){
         this.crcd = crcd;
     }
-
 }

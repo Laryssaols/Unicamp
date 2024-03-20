@@ -5,7 +5,14 @@ class Funcionario{
     private int num_dependente; 
     private double salario; 
 
-    @Override
+    public Funcionario(String nome, String cpf, String dt_nasc, int num_dependente, double salario) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dt_nasc = dt_nasc;
+        this.num_dependente = num_dependente;
+        this.salario = salario;
+    }
+
     public double bonusAnual(){
         return (10 * this.salario)/100;
     }
@@ -43,7 +50,7 @@ class Funcionario{
     public String getSalario(){
         return salario;
     }
-    public void setNome(Double salario){
+    public void setSalario(Double salario){
         this.salario = salario;
     }
 }

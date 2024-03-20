@@ -1,5 +1,6 @@
 public class TestaAutenticacao{
     public static void main(String[] args) {
+
         GerenteTI gerenteTI = new GerenteTI;
         gerenteTI.setNome("Maria");
         gerenteTI.setCpf("555.666.777-88");
