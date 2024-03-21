@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/tip.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -70,13 +68,13 @@ class _MyHomePageState extends State<MyHomePage> {
               columns: <DataColumn>[
                 DataColumn(
                   label: Container(
-                    color: Color(0xffa77dae),
+                    color: Color.fromARGB(15, 153, 241, 126),
                     child: Text('Description'),
                   ),
                 ),
                 DataColumn(
                   label: Container(
-                    color: Color(0xffa77dae),
+                    color: Color.fromARGB(255, 125, 174, 133),
                     child: Text('Amount'),
                   ),
                 ),
@@ -100,21 +98,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 ]),
                 DataRow(cells: <DataCell>[
                   DataCell(Text('Default Tipped Amount Per Customer')),
-                  DataCell(Text(tip.defaultTippedAmountPerCustomer)),
+                  DataCell(Text(tip.defaultTippedAmountPeople)),
                 ]),
                 DataRow(cells: <DataCell>[
                   DataCell(Text('Custom Tipped Amount Per Customer')),
-                  DataCell(Text(tip.customTippedAmountPerCustomer)),
+                  DataCell(Text(tip.customTippedAmountPeople)),
                 ]),
                 DataRow(cells: <DataCell>[
                   DataCell(
                       Text('Amount Plus Default Tipped Amount Per Customer')),
-                  DataCell(Text(tip.amountPlusDefaultTippedAmountPerCustomer)),
+                  DataCell(Text(tip.amountPlusDefaultTippedAmountPeople)),
                 ]),
                 DataRow(cells: <DataCell>[
                   DataCell(
                       Text('Amount Plus Custom Tipped Amount Per Customer')),
-                  DataCell(Text(tip.amountPlusCustomTippedAmountPerCustomer)),
+                  DataCell(Text(tip.amountPlusCustomTippedAmountPeople)),
                 ]),
               ],
             ),

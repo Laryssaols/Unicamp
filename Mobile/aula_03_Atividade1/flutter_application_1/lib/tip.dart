@@ -2,34 +2,30 @@ class Tip {
   final double _defaultTip;
   double? _customTip;
   double? _totalAmount;
-  int _customerPaying = 1;
+  int personPaying = 1;
 
-  String get defaultTippedAmountPerCustomer {
+  String get defaultTippedAmountPeople {
     return _totalAmount == null
         ? "0"
-        : ((_totalAmount! * _defaultTip / 100) / _customerPaying)
-            .toStringAsFixed(2);
+        : ((_totalAmount! * _defaultTip / 100) / personPaying).toStringAsFixed(2);
   }
 
-  String get customTippedAmountPerCustomer {
+  String get customTippedAmountPeople {
     return _totalAmount == null
         ? "0"
-        : (((_totalAmount ?? 0) * (_customTip ?? 0) / 100) / _customerPaying)
-            .toStringAsFixed(2);
+        : (((_totalAmount ?? 0) * (_customTip ?? 0) / 100) / personPaying).toStringAsFixed(2);
   }
 
-  String get amountPlusDefaultTippedAmountPerCustomer {
+  String get amountPlusDefaultTippedAmountPeople {
     return _totalAmount == null
         ? "0"
-        : ((_totalAmount! * (1 + (_defaultTip / 100))) / _customerPaying)
-            .toStringAsFixed(2);
+        : ((_totalAmount! * (1 + (_defaultTip / 100))) / personPaying).toStringAsFixed(2);
   }
 
-  String get amountPlusCustomTippedAmountPerCustomer {
+  String get amountPlusCustomTippedAmountPeople{
     return _totalAmount == null
         ? "0"
-        : ((_totalAmount! * (1 + ((_customTip ?? 0) / 100))) / _customerPaying)
-            .toStringAsFixed(2);
+        : ((_totalAmount! * (1 + ((_customTip ?? 0) / 100))) / personPaying).toStringAsFixed(2);
   }
 
   Tip() : _defaultTip = 10 {
