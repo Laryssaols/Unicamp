@@ -8,7 +8,7 @@ public class TestarFuncionario {
         System.out.println("Bônus Anual de " + programador.getNome() + ": " + programador.getBonusAnual());
         System.out.println("CRP do Programador: " + programador.getCrp());
         
-        Cientista cientista = new Cientista("Mário", "111.222.333-44", "05/03/1978", 3, 8000.00, 54321);
+        CientistadeDados cientista = new CientistadeDados("Mário", "111.222.333-44", "05/03/1978", 3, 8000.00, 54321);
 
         System.out.println("Cientista");
         System.out.println("Bônus Anual de " + cientista.getNome() + ": " + cientista.getBonusAnual());

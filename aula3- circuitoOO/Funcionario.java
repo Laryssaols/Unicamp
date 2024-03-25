@@ -1,10 +1,11 @@
 class Funcionario{
     private String nome;
-    private String cpf; 
+    private String cpf;
     private String dt_nasc;
-    private int num_dependente; 
-    private double salario; 
+    private int num_dependente;
+    private double salario;
 
+    //construtor
     public Funcionario(String nome, String cpf, String dt_nasc, int num_dependente, double salario) {
         this.nome = nome;
         this.cpf = cpf;
@@ -13,24 +14,26 @@ class Funcionario{
         this.salario = salario;
     }
 
-    public double bonusAnual(){
+    //métodoBonus
+    public double getBonusAnual(){
         return (10 * this.salario)/100;
     }
-    //get set nome
+
+    //get e set nome
     public String getNome(){
         return nome;
     }
     public void setNome(String nome){
         this.nome = nome;
     }
-    // get set cp
+    // get e set cp
     public String getCpf(){
         return cpf;
     }
     public void setCpf(String cpf){
         this.cpf = cpf;
     }
-    //get set dtnasc
+    //get e set dtnasc
     public String getDtNasc(){
         return dt_nasc;
     }
@@ -38,19 +41,19 @@ class Funcionario{
         this.dt_nasc= dt_nasc;
     }
 
-    //get set num depende
-    public String getNum_dependente(){
+    //get e set num depende
+    public int getNumDependente(){
         return num_dependente;
     }
-    public void setNum_dependente(String num_dependente){
+    public void setNum_dependente(int num_dependente){
         this.num_dependente = num_dependente;
     }
-    //get set salario
+    //get e set salario
 
-    public String getSalario(){
+    public double getSalario(){
         return salario;
     }
-    public void setSalario(Double salario){
+    public void setSalario(double salario){
         this.salario = salario;
     }
 }
