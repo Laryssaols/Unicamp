@@ -40,7 +40,7 @@ public class TestarRelatorios {
         relatorioGastos.adiciona(funcionario);
         relatorioGastos.adiciona(gerenteTI);
         relatorioGastos.adiciona(programador);
-        relatorioGastos.adiciona(cientistadeDados);
+        relatorioGastos.ad iciona(cientistadeDados);
 
         System.err.println("O total de bonus é:" + relatorioGastos.getTotalBonus()+ " \nO total de Salario é: " + relatorioGastos.getTotalSalario());
         CientistadeDados c =new CientistadeDados("Leo", "12345678777","23/09/2000",4, 900, 234);
