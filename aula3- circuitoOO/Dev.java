@@ -1,11 +1,14 @@
-public class DevfrontEnd extends Funcionario {
-    private int crpw;
-
-    public DevfrontEnd() {
+public class Dev extends Funcionario {
+    public Dev(String nome, String cpf, String dt_nasc, int num_dependente, double salario) {
+        super(nome, cpf, dt_nasc, num_dependente, salario);
+        this.crpw = crpw;
     }
 
+    private int crpw;
+    
     public int getCrpw() {
-        return crpw;     }
+        return crpw;
+    }
 
     public void setCrpw(int crpw) {
         this.crpw = crpw;
