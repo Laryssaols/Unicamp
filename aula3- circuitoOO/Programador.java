@@ -12,4 +12,15 @@ public class Programador extends Funcionario{
     public void setCrp(int crp){
         this.crp = crp;
     }
+
+    @Override
+    public double getBonusAnual() {
+        return getSalario() * 0.15;
+    }
+
+     //saudacao
+    @Override
+    public String saudacao(){
+        return "Bem vinde Programador, " + getNome();
+    }
 }

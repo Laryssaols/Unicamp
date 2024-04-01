@@ -6,9 +6,6 @@ public class TestarRelatorios {
         
         List<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
 
-        Funcionario funcionario = new Funcionario("Maria", "12345678912", "12/04/2000", 0, 3000);
-        listaFuncionarios.add(funcionario);
-
         GerenteTI gerenteTI = new GerenteTI("Marta", "12345678412", "12/04/2001", 0, 12000, 2, "23","senha123");
         listaFuncionarios.add(gerenteTI);
         
@@ -18,24 +15,12 @@ public class TestarRelatorios {
         CientistadeDados cientistadeDados = new CientistadeDados("Leo", "12345678777","23/09/2000",4, 9000, 234);
         listaFuncionarios.add(cientistadeDados);
 
-        for(Funcionario f: listaFuncionarios){
-            System.out.print("Bem vinde, ");
-            
-            if (f instanceof GerenteTI){
-                System.err.print("Gerente de TI ");
-            }
-            if (f instanceof Programador){
-                System.out.print("Programador ");
-            }
-            if(f instanceof CientistadeDados){
-                System.out.print("Cientista de Dados ");
-            }
-            System.out.print(f.getNome());
-            System.out.println("\n");
+        for (Funcionario f: listaFuncionarios){
+            System.out.println(f.saudacao());
         }
     }
         /*
-        
+    }
         RelatorioGastos relatorioGastos = new RelatorioGastos();
         relatorioGastos.adiciona(funcionario);
         relatorioGastos.adiciona(gerenteTI);

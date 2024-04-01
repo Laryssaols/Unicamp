@@ -10,9 +10,10 @@ public class GerenteTI extends Funcionario{
         this.senha = senha;
     }
     
+   
     @Override
     public double getBonusAnual(){
-        return (super.getSalario() * 0.1) * this.get_numFunc(); //this busca na própria classe
+        return (getSalario() * 0.1) * this.get_numFunc(); //this busca na própria classe
     }
     
     public int get_numFunc(){
@@ -53,5 +54,11 @@ public class GerenteTI extends Funcionario{
             return true;
         else
             return false;
+    }
+
+    //saudacao
+    @Override
+    public String saudacao(){
+        return "Bem vinde Gerente de TI, " + getNome();
     }
 }
