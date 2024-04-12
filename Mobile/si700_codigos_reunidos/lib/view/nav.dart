@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'aluno_cadastro_screen.dart'; // Importe a tela AlunoCadastroScreen aqui
 
 class TopNavigationBar extends StatefulWidget {
   const TopNavigationBar({
@@ -25,15 +26,9 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
           widget.onTap(index, element);
         },
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 4.0),
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-
-          height: 20,
-          color: Colors.blue,
-          //decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
           child: Text(
-            element.toString(),
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            element,
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ));
@@ -44,7 +39,23 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: getChildren(),
+      children: [
+        ...getChildren(),
+        TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AlunoCadastroScreen()),
+            );
+          },
+          child: Container(
+            child: Text(
+              'Cadastrar Aluno',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
