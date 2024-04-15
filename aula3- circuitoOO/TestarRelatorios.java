@@ -9,9 +9,6 @@ public class TestarRelatorios {
         GerenteTI gerenteTI = new GerenteTI("Marta", "12345678412", "12/04/2001", 0, 12000, 2, "23","senha123");
         listaFuncionarios.add(gerenteTI);
         
-        Programador programador = new Programador("Julia", "12345678912","15/07/2001", 2, 7000,1222);
-        listaFuncionarios.add(programador);
-        
         CientistadeDados cientistadeDados = new CientistadeDados("Leo", "12345678777","23/09/2000",4, 9000, 234);
         listaFuncionarios.add(cientistadeDados);
 

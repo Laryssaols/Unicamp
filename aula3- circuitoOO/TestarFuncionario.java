@@ -2,7 +2,7 @@ public class TestarFuncionario {
 
     public static void main(String[] args) {
 
-        Programador programador = new Programador("Ana", "987.654.321-10", "10/02/1985", 1, 6000.00, 12345);
+        AssistentedeRH = new AssistentedeRH("Ana", "987.654.321-10", "10/02/1985", 1, 6000.00, 12345);
 
         System.out.println("Programador");
         System.out.println("Bônus Anual de " + programador.getNome() + ": " + programador.getBonusAnual());

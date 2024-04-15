@@ -20,4 +20,22 @@ public class CientistadeDados extends Funcionario{
     public void setCrcd(int crcd){
         this.crcd = crcd;
     }
+
+    @Override
+    //metodo autentica senha
+    public boolean autentica(String senha){
+        if (this.senha.equals(senha)){
+            return true;
+        } else{
+            return false;
+        }
+    }
+    @Override
+     //metodo autentica senha e cpf
+    public boolean autentica(String senha, String cpf){
+        if(autentica(senha) && cpf.length() == 11)
+            return true;
+        else
+            return false;
+    }
 }

@@ -1,4 +1,4 @@
-public class GerenteTI extends Funcionario{
+public class GerenteTI extends Funcionario implements Autenticavel{
     private int num_Func;
     private String ramal;
     private String senha;
@@ -40,6 +40,7 @@ public class GerenteTI extends Funcionario{
         this.senha = senha;
     }
     
+    @Override
     //metodo autentica senha
     public boolean autentica(String senha){
         if (this.senha.equals(senha)){
@@ -48,6 +49,7 @@ public class GerenteTI extends Funcionario{
             return false;
         }
     }
+    @Override
      //metodo autentica senha e cpf
     public boolean autentica(String senha, String cpf){
         if(autentica(senha) && cpf.length() == 11)

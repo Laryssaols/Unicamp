@@ -1,27 +1,27 @@
-public class Dev extends Funcionario {
-    public Dev(String nome, String cpf, String dt_nasc, int num_dependente, double salario) {
+class AssistenteRH extends Funcionario(){
+    private int crp;
+
+    public AssistentedeRH(String nome, String cpf, String dt_nasc, int num_dependente, double salario, int crp){
         super(nome, cpf, dt_nasc, num_dependente, salario);
-        this.crpw = crpw;
+        this.crp = crp;
     }
-
-    private int crpw;
     
-    public int getCrpw() {
-        return crpw;
+    public int getCrp(){
+        return crp;
     }
-
-    public void setCrpw(int crpw) {
-        this.crpw = crpw;
+    public void setCrp(int crp){
+        this.crp = crp;
     }
 
     @Override
     public double getBonusAnual() {
-        return getSalario() * 0.1;
+        return getSalario() * 0.15;
     }
 
+     //saudacao
     @Override
-    public String saudacao() {
-        return "Bem vinde Dev Front End, " + getNome();
+    public String saudacao(){
+        return "Bem vinde Programador, " + getNome();
     }
 
     @Override
@@ -42,5 +42,3 @@ public class Dev extends Funcionario {
             return false;
     }
 }
-
-
